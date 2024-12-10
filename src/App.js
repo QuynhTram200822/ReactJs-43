@@ -1,21 +1,25 @@
 // App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import StudentList from "./pages/StudentTable";
+
+import ScrollToTop from "react-scroll-to-top";
+import PageA from "./pages/PageA";
+import PageB from "./pages/PageB";
 
 import NotFound from "./pages/NotFound";
-import LayoutFrontend from "./components/LayoutFrontend";
 
 function App() {
   return (
     <Router>
+        <ScrollToTop smooth color="#6f00ff" />
       <Routes>
         <Route
           index
           element={
-              <StudentList />
+              <PageA />
           }
         />
+        <Route path="/page-b" element={<PageB />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
